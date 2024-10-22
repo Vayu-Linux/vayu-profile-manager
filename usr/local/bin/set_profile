@@ -1,0 +1,22 @@
+#!/bin/sh
+
+PROFILE=$1
+echo $PROFILE > /tmp/selected_profile
+
+case $PROFILE in
+    Default)
+        umount /home/aditya
+        mount -o subvol=@default /dev/nvme0n1p2 /home/aditya
+        ;;
+    Gaming)
+        umount /home/aditya
+        mount -o subvol=@gaming /dev/nvme0n1p2 /home/aditya
+        ;;
+    Hacking)
+        umount /home/aditya
+        mount -o subvol=@hacking /dev/nvme0n1p2 /home/aditya
+        ;;
+    *)
+        echo "Unknown profile!"
+        ;;
+esac

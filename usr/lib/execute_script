@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sudo /usr/local/bin/set_profile "$2"
+
+exec "$1"
